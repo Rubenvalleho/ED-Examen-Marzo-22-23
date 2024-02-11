@@ -2,14 +2,13 @@ package com.rubenvj.bank.features.transaction.domain;
 
 import com.rubenvj.bank.features.transaction.data.TransactionDataRepository;
 
-public class CreateTransactionUseCase {
+public class GetTransactionsUseCase {
     private final TransactionDataRepository transactionDataRepository;
-
-    public CreateTransactionUseCase(TransactionDataRepository transactionDataRepository){
+    public GetTransactionsUseCase (TransactionDataRepository transactionDataRepository) {
         this.transactionDataRepository = transactionDataRepository;
     }
 
-    public void execute (Transaction transaction) {
-        transactionDataRepository.createTransaction(transaction);
+    public void execute () {
+        transactionDataRepository.printTransactions();
     }
 }
