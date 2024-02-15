@@ -8,7 +8,7 @@ public class GetCustomerUseCase {
         this.customerDataRepository = customerDataRepository;
     }
 
-    public void execute (String dni) {
-        customerDataRepository.printCustomer(dni);
+    public Customer execute (String dni) {
+        return customerDataRepository.printCustomer(dni);
     }
 }
