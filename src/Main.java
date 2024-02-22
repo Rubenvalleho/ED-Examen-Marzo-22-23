@@ -13,10 +13,23 @@ import com.rubenvj.bank.features.transaction.data.TransactionDataRepository;
 import com.rubenvj.bank.features.transaction.domain.Transaction;
 import com.rubenvj.bank.features.transaction.presentation.MainTransaction;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Main {
-    public static void main(String[] args) {;
+
+    public static void archivoIniciar() {
+        try {
+            File archivo = new File("archivo.txt");
+            if (archivo.createNewFile()) {
+                System.out.println("PRIMERA VEZ");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public static void main(String[] args) {
 
         MainTransaction.createTransaction(new Transaction("001", "Retirada de dinero", "-200€"));
         MainTransaction.createTransaction(new Transaction("002", "Ingreso de dinero", "300€"));
@@ -30,5 +43,7 @@ public class Main {
 
         CreateBankAccountUseCase createBankAccountUseCase = new CreateBankAccountUseCase(customer, );
         createBankAccountUseCase.execute("asdasd");
+
+        archivoIniciar();
     }
 }
