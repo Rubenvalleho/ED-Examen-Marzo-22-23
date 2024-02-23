@@ -39,10 +39,9 @@ public class Main {
 
         MainBankProducts.createProducts(new Mortgage("001", "Hipoteca 1", "Hipoteca", "01/01/2024", "5%", "01/01/2040", "200.000€"));
 
-        Customer customer = new GetCustomerUseCase(new CustomerDataRepository()).execute("70823234h");
+        MainBankAccount.createAccount("70823234h");
 
-        CreateBankAccountUseCase createBankAccountUseCase = new CreateBankAccountUseCase(customer, );
-        createBankAccountUseCase.execute("asdasd");
+
 
         archivoIniciar();
     }
